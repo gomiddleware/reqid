@@ -18,5 +18,5 @@ func main() {
 	http.Handle("/scrub/", reqid.ScrubRequestIdHeader(reqid.RandomId(handle)))
 	http.Handle("/", reqid.RandomId(handle))
 
-	http.ListenAndServe(":8080", nil)
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
