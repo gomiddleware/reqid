@@ -11,8 +11,8 @@
 
 /*
 Package reqid provides standard Go middleware to read the X-Request-ID header on the incoming request and store it in
-the request's context. If no header exists, then one is generated. You may optionally scrub this incoming header so
-that one is always generated (such as on externally facing servers).
+the request's context. If no header exists, then one is generated. You may optionally scrub the incoming header so that
+one is always generated (such as on externally facing servers).
 
 Also provided are some convenience functions to be able to read this RequestId back out in later middleware.
 

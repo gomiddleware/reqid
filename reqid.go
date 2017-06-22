@@ -14,12 +14,18 @@ package reqid
 import (
 	"context"
 	"net/http"
+
+	"github.com/chilts/sid"
 )
 
 type key int
 
 const reqIdKey key = 42
-const CHARS string = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~"
+
+// randomId just returns a string of a new Id.
+func randomId(len int) string {
+	return sid.Id()
+}
 
 // ScrubRequestIdHeader should be used on externally facing servers when you want to add your own X-Request-ID. Use
 // this before RandomId. If an externally facing server is hitting internal microservices and you want the X-Request-ID

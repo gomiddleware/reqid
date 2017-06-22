@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	reqid "../"
+	"github.com/gomiddleware/reqid"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
